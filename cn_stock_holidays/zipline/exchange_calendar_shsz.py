@@ -5,8 +5,11 @@ import pytz
 from zipline.utils.memoize import remember_last, lazyval
 import warnings
 
-from zipline.utils.calendars import TradingCalendar
-from zipline.utils.calendars.trading_calendar import days_at_time, NANOS_IN_MINUTE
+from trading_calendars import TradingCalendar
+from trading_calendars.utils.pandas_utils import days_at_time
+#from trading_calendars import NANOS_IN_MINUTE
+NANOS_IN_MINUTE = 60000000000
+
 import numpy as np
 import pandas as pd
 

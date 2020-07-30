@@ -69,6 +69,12 @@ class HKExchangeCalendar(TradingCalendar):
     def adhoc_holidays(self):
         return [Timestamp(t,tz=pytz.UTC) for t in get_cached(use_list=True)]
 
+    open_times = (
+        (None, time(9, 31)),
+    )
+    close_times = (
+        (None, time(15, 0)),
+    )
 
     @property
     @remember_last

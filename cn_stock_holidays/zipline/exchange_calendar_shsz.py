@@ -21,6 +21,7 @@ start_default = pd.Timestamp('1990-12-19', tz='UTC')
 end_base = pd.Timestamp('today', tz='UTC')
 end_default = end_base + pd.Timedelta(days=365)
 
+# https://github.com/quantopian/trading_calendars/edit/master/trading_calendars/exchange_calendar_xshg.py
 
 class SHSZExchangeCalendar(TradingCalendar):
     """
@@ -77,6 +78,16 @@ class SHSZExchangeCalendar(TradingCalendar):
     @property
     def close_time(self):
         return time(15, 0)
+
+    open_times = (
+        (None, time(9, 31)),
+    )
+    close_times = (
+        (None, time(15, 0)),
+    )
+#        @property
+#    def precomputed_holidays(self):
+#        return precomputed_shanghai_holidays
 
     @property
     def adhoc_holidays(self):

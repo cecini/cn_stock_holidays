@@ -6,7 +6,7 @@ setup(
     packages=find_packages(),
     install_requires=[
         'requests',
-        'trading_calendar'
+        'trading_calendars'
     ],
 
     # metadata for upload to PyPI
